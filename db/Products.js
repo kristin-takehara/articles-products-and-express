@@ -1,14 +1,18 @@
 //jshint esversion: 6
 
 class Products {
-  constructor(id, name, price, inventory){
+  constructor(){
+    this.id = 0;
     this._collection = [];
   }
 
 //Product methods
-all() {
+getAllProducts() {
   return this._collection;
 }
 
+createNewProduct() {
+  this._collection.push(id);
+}
 
 }
