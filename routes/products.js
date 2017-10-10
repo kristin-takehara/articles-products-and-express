@@ -12,3 +12,12 @@ app.use('/db:id',function (req, res, next) {
   //render main page
   res.render('main');
 });
+
+
+
+
+//error-handling
+app.use(function(err, req, res, next) {
+  console.log(err.stack);
+  res.status(500).send('Something Broke!');
+});
