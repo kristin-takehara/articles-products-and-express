@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kristin-takehara/articles-products-and-express#readme",
   "dependencies": {
     "express": "^4.16.1",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.10"
   }
 }
