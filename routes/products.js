@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const router = express.Router();
 
 const Products = require('../db/products');
+console.log(Products);
 const products = new Products();
 
 ///////////////SERVER//////////////

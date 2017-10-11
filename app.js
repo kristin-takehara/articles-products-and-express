@@ -2,7 +2,7 @@
 console.log("You Cray Cray!");
 
 const express = require('express');
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 8080;
@@ -18,8 +18,10 @@ app.engine('.hbs', exphbs({
 }));
 
 app.use(bodyParser.urlencoded({ "extended" : true})); //ensures server handles incoming requests through express
+app.use(methodOverride('_method'));
+
 app.use('/products', productsRoute);
-// app.use(methodOverride('_method'));
+
 
 app.set('view engine', '.hbs');
 

@@ -56,7 +56,7 @@ class Products {
       }
     });
     if (parseInt(product.price) < 1 || parseInt(object.price) < 1) {
-      result = false; //
+      result = false;
     }
     if(!result){
       return result;
@@ -86,4 +86,4 @@ class Products {
 
 }
 
-module.exports = new Products();
+module.exports = Products;
