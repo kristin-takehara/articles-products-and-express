@@ -11,6 +11,15 @@ getAllProducts() {
   return this._collection;
 }
 
+getProductById(id){
+  let index = null;
+
+}
+
+addProduct() {
+
+}
+
 createNewProduct() {
   this._collection.push(id);
 }

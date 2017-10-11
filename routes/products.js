@@ -6,7 +6,7 @@ const router = express.Router();
 const Products = require('../db/products');
 const products = new Products();
 
-
+///////////////SERVER//////////////
 const app = express();
 app.use('/', router);
 
@@ -28,14 +28,13 @@ app.post('/', (req, res) => {
   res.redirect('/products');
 });
 
-//error-handling
+//error-handling?
 app.use(function(err, req, res, next) {
   console.log(err.stack);
-  res.status(500).send('Something Broke!');
+  res.status(500).send('Oops, something went wrong!');
 });
 
 ////////////////ROUTER////////////////////
-
 router.get('/new', (req, res) => {
   res.render('new');
 });
@@ -44,8 +43,8 @@ router.get('/:id', (req, res) => {
   res.render('product', {product: 'some product'});
 });
 
-router.get('/id:/edit', (req, res) => {
-  res.render('edit', {form: 'form'});
+router.get('/:id/edit', (req, res) => {
+  res.render('edit', { form: 'form' });
 });
 
 module.exports = router;
