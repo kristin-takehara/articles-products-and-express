@@ -86,4 +86,4 @@ class Products {
 
 }
 
-module.exports = Products;
+module.exports = new Products();

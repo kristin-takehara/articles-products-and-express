@@ -4,21 +4,28 @@
 ///NEED TO EXAMINE THIS DB CLOSELY. What needs to be returned to the router in the instantiation?
 class Articles {
   constructor() {
-    this.title = "";
     this._collection = [];
   }
 
-  // all() {
-  //   return this._collection;
-  // }
+  getAllArticles(){
+    return this._collection;
+  }
 
-  // add(title) {
-  //   this._collection.push(title);
-  // }
+  addArticles(article){
+    article.urlTitle = encodeURI(article.title);
+    this._collection.push(article);
+    return this._collection;
+  }
 
-  // delete(title) {
-  //   this._collection.filter(title);
-  // }
+  getArticleByTitle(title) {
+    let index;
+    this._collection.forEach((object) => {
+      if(object.title === title) {
+        index = this._collection.indexOf(object);
+      }
+    });
+    return this._collection[index];
+  }
 
 }
 
