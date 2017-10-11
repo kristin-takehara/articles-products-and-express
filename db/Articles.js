@@ -3,6 +3,7 @@
 ///NEED TO EXAMINE THIS DB CLOSELY. What needs to be returned to the router in the instantiation?
 class Articles {
   constructor() {
+    this.title = "";
     this._collection = [];
   }
 
@@ -23,7 +24,6 @@ class Articles {
       return this._collection[index];
     }
   }
-
 
 //article request has keys: title, body, author, urlTitle
   addArticle(article){
@@ -47,12 +47,12 @@ class Articles {
     let result = true;
     this._collection.forEach((object) => {
       if(object.title.toLowerCase() == item.title.toLowerCase()) {
-        resulte = false;
+        result = false;
       }
     });
-    if(article.body = "" || object.body = ""){
-      result = false;
-    }
+    // if(article.body = "" || object.body = ""){
+    //   result = false;
+    // }
     if(!result){
       return result;
     }else{

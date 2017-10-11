@@ -26,7 +26,8 @@ app.use('/products', productsRoute);
 app.set('view engine', '.hbs');
 
 app.get('/', (req, res) => {
-  res.send('Testing 1, 2, 3');
+  // res.send('Testing 1, 2, 3');
+  res.render('home', {  });//<<---- pick up here
 });
 
 app.listen(PORT, () => {
