@@ -2,9 +2,8 @@
 
 ///NEED TO EXAMINE THIS DB CLOSELY. What needs to be returned to the router in the instantiation?
 class Articles {
-  constructor() {
-    this.title = "";
-    this._collection = [];
+  constructor(seed) {
+    this._collection = seed || [];
   }
 
   getAllArticles(){
@@ -12,17 +11,19 @@ class Articles {
   }
 
   getArticleByTitle(title) {
-    let index = object;
-    // let index = null;
-    // this._collection.forEach((object) => {
-    //   if(object.title === title) {
-    //     index = this._collection.indexOf(object);
-    //   }
-    // });
+    let index = null;
+    this._collection.forEach((object) => {
+      if(object.title === title) {
+        // index = object;
+        index = this._collection.indexOf(object);
+      }
+    });
     if(index === null){
-      console.log('No such article found');
-      throw error; //<<<--do i want to return an error here?
+      // console.log('No such article found');
+      return false;
+      // throw error; //<<<--do i want to return an error here?
     }else{
+      // return true;
       return this._collection[index];
     }
   }
@@ -37,7 +38,7 @@ class Articles {
       if(result === false){
         return result;
       }else{
-        // article.title = this.title;
+        article.title = this.title;
         article.urlTitle = encodeURI(article.title);
         this._collection.push(article);
         return this._collection;

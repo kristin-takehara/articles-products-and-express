@@ -1,1 +1,15 @@
 {{!-- products --}}
+
+{{!-- GET responds with HTML generated from your templates.
+The HTML should contain an empty form which a user will be able to create a new product. This form points to your server's route for creating a new product.
+file name: new.hbs --}}
+
+<form action="/products"{{product}}>
+
+Product Name: <input type="text" name="Book Title" value=""><br>
+Product Price: <input type="text" name="Price" value=""><br>
+<input type="submit" value="submit">
+
+<p>Click on the 'submit' button to enter a new product.</p>
+
+</form>

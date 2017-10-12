@@ -3,7 +3,7 @@
 class Products {
   constructor(){
     this.id = 0;
-    this._collection = [];
+    this._collection = ['ship lap', 'waco t-shirt', 'farmhouse sign'];
   }
 
 //Product methods:
@@ -15,16 +15,17 @@ class Products {
 
   //isolate a product by its id/index position.
   getProductById(id){
-    let index = object;
-    // let index = null;
-    // this._collection.forEach((object) => {
-    //     if(object.id === id){
-    //       index = this._collection.indexOf(object);
-    //     }
-    //   });
+    let index = null;
+    this._collection.forEach((object) => {
+        if(object.id === id){
+          // index = object;
+          index = this._collection.indexOf(object);
+        }
+      });
       if(index === null){
-        throw error; //<<<---do i want to throw an error here?
+        return false; //<<<---do i want to throw an error here?
       }else{
+        // return true;
         return this._collection[index];
       }
     }

@@ -23,14 +23,13 @@ app.use(bodyParser.urlencoded({ "extended" : true})); //ensures server handles i
 app.use(methodOverride('_method'));
 // action="/products/4?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded"
 
+app.use('/products', productsRoute);
+app.use('/articles', articlesRoute);
 
 app.get('/', (req, res) => {
   // res.send('Testing 1, 2, 3');
   res.render('home');//<<------ pick up here???
 });
-
-app.use('/products', productsRoute);
-app.use('/articles', articlesRoute);
 
 app.listen(PORT, () => {
   console.log("Server listening on port: " + PORT);

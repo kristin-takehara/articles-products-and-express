@@ -1,1 +1,15 @@
 {{!-- products --}}
+
+{{!-- GET responds with HTML generated from your template which displays the Products information for the product with the corresponding id.
+file name: product.hbs --}}
+
+<form action="/products/{{id}}">
+  {{#each products}}
+  Product Name:<br>
+  <input type="text" name="productName">
+  Price:<br>
+  <input type="text" name="productPrice">
+  In Stock:<br>
+  <input type="text" name="productInventory">
+  {{/each}}
+</form>
