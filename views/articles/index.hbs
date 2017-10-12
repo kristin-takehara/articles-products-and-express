@@ -1,0 +1,9 @@
+{{!-- articles --}}
+
+<form action="/articles/{{title}}">
+  <ul>
+    {{#each collection}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</form>

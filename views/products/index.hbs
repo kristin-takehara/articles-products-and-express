@@ -1,0 +1,12 @@
+{{!-- products --}}
+
+{{!-- GET responds with HTML generated from your template which displays all Products added thus far.
+file name: index.hbs --}}
+
+<form action="/products/{{id}}">
+  <ul>
+    {{#each products}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</form>
