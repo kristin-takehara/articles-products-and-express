@@ -18,15 +18,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('products/new');
+  res.render('/products/new');
 });
 
 router.get('/:id', (req, res) => {
-  res.render('products/product', { products: 'some product'});
+  res.render('/products/product', { products: products.find(req.params.id)});
 });
 
+//delete
+
 router.get('/:id/edit', (req, res) => {
-  res.render('products/edit', { form: 'form' });
+  res.render('/products/edit', { form: 'form' });
 });
 
 router.post('/', (req, res) => {
