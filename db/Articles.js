@@ -12,14 +12,16 @@ class Articles {
   }
 
   getArticleByTitle(title) {
-    let index = null;
-    this._collection.forEach((object) => {
-      if(object.title === title) {
-        index = this._collection.indexOf(object);
-      }
-    });
+    let index = object;
+    // let index = null;
+    // this._collection.forEach((object) => {
+    //   if(object.title === title) {
+    //     index = this._collection.indexOf(object);
+    //   }
+    // });
     if(index === null){
-      return false;
+      console.log('No such article found');
+      throw error; //<<<--do i want to return an error here?
     }else{
       return this._collection[index];
     }
@@ -35,7 +37,7 @@ class Articles {
       if(result === false){
         return result;
       }else{
-        article.title = this.title;
+        // article.title = this.title;
         article.urlTitle = encodeURI(article.title);
         this._collection.push(article);
         return this._collection;
@@ -67,7 +69,7 @@ class Articles {
   deleteArticle(title) {
     let index;
     this._collection.forEach((item) => {
-      if(item.title === id) {
+      if(item.title === title) {
         index = this._collection.indexOf(item);
       }
     });
