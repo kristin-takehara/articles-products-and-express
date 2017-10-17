@@ -1,0 +1,15 @@
+{{!-- products --}}
+
+{{!-- GET: responds with HTML generated from the db. Should contain an empty form which a user will be able to create a new product. this form points to the server's routes --}}
+
+<form action="/products"{{product}}>
+
+  Product Name: <input type="text" name="Book Title" value=""><br>
+
+  Product Price: <input type="text" name="Price" value=""><br>
+
+  <input type="submit" value="submit">
+
+  <p>Click on the 'submit' button to enter a new product</p>
+
+</form>

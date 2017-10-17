@@ -1,0 +1,11 @@
+{{!-- products --}}
+
+{{!-- GET responds with HTML generated from your db which displays all products added thus far--}}
+
+<form action="/products/{{id}}">
+  <ul>
+    {{#each products}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</form>

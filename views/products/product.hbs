@@ -1,0 +1,14 @@
+{{!-- products --}}
+
+{{!-- GET responds with HTML generated from your db which displays the products information for the product with the corresponding id --}}
+
+<form action="/products/{{id}}">
+  {{#each products}}
+  Product Name: <br>
+  <input type="text" name="productName">
+  Price: <br>
+  <input type="text" name = productPrice>
+  In Stock: <br>
+  <input type="text" name="productInventory">
+  {{/each}}
+</form>
