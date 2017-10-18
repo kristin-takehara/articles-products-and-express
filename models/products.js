@@ -70,8 +70,17 @@ class Products {
       });
   }
 
+  delete(ID) {
+    let query = ('DELETE from products WHERE id = ${ID}');
 
-
+    return db.any(query)
+    .then((data) => {
+      return this.find(ID);
+    })
+    .catch((err) => {
+      console.log('ERROR: Unable to Delete', err);
+    });
+  }
 }
 
 
