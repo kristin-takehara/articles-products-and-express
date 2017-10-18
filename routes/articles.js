@@ -4,10 +4,8 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const router = express.Router();
-// const app = express();
-// app.use('/', router);
 
-const Articles = require('../db/articles');
+const Articles = require('../models/articles');
 
 const myArticles = [
   {
